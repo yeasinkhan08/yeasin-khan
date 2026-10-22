@@ -4,11 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Works", href: "#works" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/#home" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/#services" },
+  { name: "Works", href: "/#works" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
 
         {/* Hire Me Button */}
         <Link
-          href="#contact"
+          href="/#contact"
           className="hidden h-[46px] items-center justify-center gap-1.5 rounded-[16px] border border-gray-200 px-6 text-[14px] font-semibold text-black transition-all duration-200 hover:border-[#F15B3A] hover:bg-[#F15B3A] hover:text-white dark:border-[#242424] dark:text-white md:inline-flex"
         >
           Hire Me
@@ -117,7 +117,7 @@ export default function Navbar() {
               ))}
 
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 rounded-xl bg-[#F15B3A] px-4 py-3 text-center text-sm font-semibold text-white"
               >

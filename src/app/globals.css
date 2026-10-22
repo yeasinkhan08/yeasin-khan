@@ -1,6 +1,136 @@
 @import "tailwindcss";
 @plugin "daisyui" {
   themes:
-    light --default,
-    dark;
+    dark --default,
+    light;
+}
+
+:root {
+  --main-color: #9f9f9f;
+  --heading-color: #ffffff;
+  --primary-color: #f15b3a;
+  --primary-hover: #dc4829;
+  --lighter-color: #cccccc;
+  --subtitle-color: #cccccc;
+  --black-color: #000000;
+  --border-color: hsla(240, 2%, 48%, 0.2);
+  --button-border: hsla(240, 2%, 48%, 0.2);
+  --body-background: #000000;
+  --card-background: #121214;
+  --card-border: #1b1b1e;
+  --grey-bg: #e6eaee;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+/* Bento card styling */
+.bento-card {
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  background-color: #121214;
+  box-shadow: inset 0 0.362px 0.652px -1px hsla(0, 0%, 100%, 0.025), inset 0 3px 5.4px -2px hsla(0, 0%, 100%, 0.036);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .bento-card {
+    padding: 24px;
+  }
+}
+
+/* Theme button styling */
+.theme-btn {
+  background: var(--primary-color);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--button-border);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 15px;
+  padding: 12px 26px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.theme-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(241, 91, 58, 0.35);
+}
+
+.theme-btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid var(--border-color);
+}
+
+.theme-btn-outline:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(241, 91, 58, 0.35);
+}
+
+/* Project item details button */
+.details-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px rgba(241, 91, 58, 0.45);
+}
+
+.details-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: scale(1.08);
+}
+
+/* Pulse animation for green status */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
+}
+
+.pulse-dot {
+  position: relative;
+}
+.pulse-dot::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  opacity: 0.75;
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
