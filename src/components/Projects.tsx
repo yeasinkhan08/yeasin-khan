@@ -24,7 +24,7 @@ const allProjects: Project[] = [
     tags: ["React", "JavaScript", "Tailwind CSS", "Vercel"],
     githubUrl: "https://github.com/yeasinkhan08/bazar-dor-online-price",
     liveUrl: "https://bazar-dor-online-price.vercel.app",
-    // image: "/images/projects/bazar-dor.png",
+    image: "/Bazar-dor.png",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const allProjects: Project[] = [
     tags: ["TypeScript", "Next.js", "React", "Tailwind CSS"],
     githubUrl: "https://github.com/yeasinkhan08/fit-log",
     liveUrl: "https://fit-log-one-alpha.vercel.app",
-    // image: "/images/projects/fit-log.png",
+    image: "/Fitlog.png",
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const allProjects: Project[] = [
       "24/7 breaking news web portal featuring categorized articles, editorial sections, fast content rendering, and mobile-friendly responsive layout.",
     tags: ["TypeScript", "Next.js", "React", "Tailwind CSS"],
     githubUrl: "https://github.com/yeasinkhan08/news-24",
-    // image: "/images/projects/news-24.png",
+    image: "/images/projects/news-24.jpg",
   },
   {
     id: 4,
@@ -55,27 +55,27 @@ const allProjects: Project[] = [
       "Web application for discovering books, writing user reviews, tracking personal reading lists, and organizing custom wishlist collections.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/yeasinkhan08/book-vibe",
-    // image: "/images/projects/book-vibe.png",
+    image: "/images/projects/book-vibe.jpg",
   },
   {
     id: 5,
+    title: "Dev Landing Page - Tech Conference",
+    category: "Frontend",
+    description:
+      "Modern developer conference landing page with dynamic registration, schedule tracks, keynote speakers showcase, and sleek dark aesthetic.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Responsive"],
+    githubUrl: "https://github.com/yeasinkhan08/Dev-landing-page",
+    liveUrl: "https://yeasinkhan08.github.io/Dev-landing-page/",
+    image: "/images/projects/dev-landing.jpg",
+  },
+  {
+    id: 6,
     title: "BPL Player - Cricket Team Auction",
     category: "Frontend",
     description:
       "Dynamic Bangladesh Premier League player bidding platform with real-time budget calculation, team roster limits, and player statistics.",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/yeasinkhan08/Bpl-player",
-    // image: "/images/projects/bpl-player.png",
-  },
-  {
-    id: 6,
-    title: "User Management Portal & Admin Client",
-    category: "Backend",
-    description:
-      "Full stack administration dashboard with secure authentication, role-based access control, and complete CRUD user operations.",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
-    githubUrl: "https://github.com/yeasinkhan08/user-management-client",
-    // image: "/images/projects/user-management.png",
   },
   {
     id: 7,
@@ -85,21 +85,19 @@ const allProjects: Project[] = [
       "Security-first authentication middleware and session handler with token encryption, password hashing, and OAuth support.",
     tags: ["Node.js", "JavaScript", "JWT", "Security"],
     githubUrl: "https://github.com/yeasinkhan08/better-auth",
-    // image: "/images/projects/better-auth.png",
   },
   {
     id: 8,
-    title: "DevStack - Developer Tools Explorer",
-    category: "Mobile / Web",
+    title: "User Management Portal & Admin Client",
+    category: "Backend",
     description:
-      "Curated directory of modern developer tools, libraries, and frameworks with filterable categorization and documentation links.",
-    tags: ["TypeScript", "React", "Tailwind CSS"],
-    githubUrl: "https://github.com/yeasinkhan08/DevStack",
-    // image: "/images/projects/devstack.png",
+      "Full stack administration dashboard with secure authentication, role-based access control, and complete CRUD user operations.",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
+    githubUrl: "https://github.com/yeasinkhan08/user-management-client",
   },
 ];
 
-const categories = ["All", "Full Stack", "Frontend", "Backend", "Mobile / Web"] as const;
+const categories = ["All", "Full Stack", "Frontend", "Backend"] as const;
 
 interface ProjectsProps {
   showTitle?: boolean;
@@ -138,11 +136,10 @@ export default function Projects({ showTitle = true }: ProjectsProps) {
               key={cat}
               type="button"
               onClick={() => setActiveFilter(cat)}
-              className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
-                activeFilter === cat
-                  ? "bg-[#f15b3a] text-white shadow-lg shadow-[#f15b3a]/30"
-                  : "border border-white/10 bg-[#121214] text-[#cecece] hover:border-white/20 hover:text-white"
-              }`}
+              className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 ${activeFilter === cat
+                ? "bg-[#f15b3a] text-white shadow-lg shadow-[#f15b3a]/30"
+                : "border border-white/10 bg-[#121214] text-[#cecece] hover:border-white/20 hover:text-white"
+                }`}
             >
               {cat}
             </button>
@@ -157,17 +154,16 @@ export default function Projects({ showTitle = true }: ProjectsProps) {
               className="bento-card p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-[#f15b3a] hover:-translate-y-1 group"
             >
               <div>
-                {/* Optional Project Screenshot / Picture */}
+                {/* Project Screenshot / Picture */}
                 {project.image && (
-                  <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden rounded-xl bg-[#1a1a1e]">
-                    <Image
+                  <div className="relative mb-5 h-48 sm:h-52 w-full overflow-hidden rounded-xl bg-[#1a1a1e] border border-white/10">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={project.image}
                       alt={project.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
                 )}
 
