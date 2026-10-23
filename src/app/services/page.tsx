@@ -1,8 +1,7 @@
-import Pricing from "@/components/Pricing";
 import CallToAction from "@/components/CallToAction";
 
 export const metadata = {
-  title: "Services & Pricing - Yeasin Khan",
+  title: "Services - Yeasin Khan",
   description: "Explore the full stack web development and frontend engineering services offered by Yeasin Khan.",
 };
 
@@ -113,9 +112,6 @@ export default function ServicesPage() {
 
         </div>
       </section>
-
-      {/* Pricing Plans */}
-      <Pricing />
 
       {/* Call To Action Banner */}
       <CallToAction />
