@@ -6,7 +6,8 @@ import CallToAction from "@/components/CallToAction";
 
 export const metadata = {
   title: "About Me - Yeasin Khan",
-  description: "Learn more about Yeasin Khan, a Full Stack Developer specializing in React, Next.js, Node.js, and MongoDB.",
+  description:
+    "Learn more about Yeasin Khan, a Full Stack Developer specializing in React, Next.js, Node.js, and MongoDB.",
 };
 
 export default function AboutPage() {
@@ -16,7 +17,6 @@ export default function AboutPage() {
       <section className="py-6 md:py-10">
         <div className="mx-auto max-w-[1296px] px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-            
             {/* Left Column: Portrait Bento Card */}
             <div className="lg:col-span-4 bento-card flex flex-col items-center justify-between p-7 sm:p-9 text-center">
               <div className="relative mx-auto flex h-[270px] w-full max-w-[270px] items-center justify-center">
@@ -29,8 +29,21 @@ export default function AboutPage() {
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-                    <circle cx="110" cy="90" r="75" fill="#FDBA74" fillOpacity="0.25" />
-                    <circle cx="110" cy="110" r="82" stroke="#FFFFFF" strokeOpacity="0.4" strokeWidth="1.5" />
+                    <circle
+                      cx="110"
+                      cy="90"
+                      r="75"
+                      fill="#FDBA74"
+                      fillOpacity="0.25"
+                    />
+                    <circle
+                      cx="110"
+                      cy="110"
+                      r="82"
+                      stroke="#FFFFFF"
+                      strokeOpacity="0.4"
+                      strokeWidth="1.5"
+                    />
                     <path
                       d="M28 110 A82 82 0 0 0 192 110"
                       stroke="#FFFFFF"
@@ -60,9 +73,15 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-4">
-                <h2 className="text-[26px] font-bold text-white tracking-tight">Yeasin Khan</h2>
-                <p className="mt-1 text-sm text-[#9f9f9f]">Full Stack Developer</p>
-                <p className="mt-1 text-xs text-[#77777d]">Jurain, Dhaka, Bangladesh</p>
+                <h2 className="text-[26px] font-bold text-white tracking-tight">
+                  Yeasin Khan
+                </h2>
+                <p className="mt-1 text-sm text-[#9f9f9f]">
+                  Full Stack Developer
+                </p>
+                <p className="mt-1 text-xs text-[#77777d]">
+                  Jurain, Dhaka, Bangladesh
+                </p>
               </div>
 
               {/* Social links */}
@@ -74,7 +93,11 @@ export default function AboutPage() {
                   aria-label="Facebook"
                   className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-all hover:border-[#f15b3a] hover:bg-[#f15b3a] hover:text-white"
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-4 w-4"
+                  >
                     <path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.4v2.2H7v3.2h2.8V21h3.6Z" />
                   </svg>
                 </a>
@@ -85,7 +108,11 @@ export default function AboutPage() {
                   aria-label="X"
                   className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-all hover:border-[#f15b3a] hover:bg-[#f15b3a] hover:text-white"
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-3.5 w-3.5"
+                  >
                     <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 17.8h1.7L7.3 4.1H5.5l12.3 15.7Z" />
                   </svg>
                 </a>
@@ -96,8 +123,16 @@ export default function AboutPage() {
                   aria-label="GitHub"
                   className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-all hover:border-[#f15b3a] hover:bg-[#f15b3a] hover:text-white"
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.52 1.03 1.52 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.59c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-4 w-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.52 1.03 1.52 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.59c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+                    />
                   </svg>
                 </a>
               </div>
@@ -110,18 +145,30 @@ export default function AboutPage() {
                   About Me
                 </p>
                 <h1 className="mt-2 text-[26px] sm:text-[34px] md:text-[40px] font-bold text-white tracking-tight leading-[1.25]">
-                  I’m Yeasin Khan, a Full Stack Developer crafting seamless digital experiences.
+                  I’m Yeasin Khan, a Full Stack Developer crafting seamless
+                  digital experiences.
                 </h1>
 
                 <div className="mt-6 space-y-4 text-[15px] sm:text-[16px] leading-relaxed text-[#9f9f9f]">
                   <p>
-                    I specialize in building end-to-end web applications with modern architectures. Based in Dhaka, Bangladesh, I work with startups, businesses, and engineering teams to transform conceptual wireframes into high-performing, interactive web applications.
+                    I specialize in building end-to-end web applications with
+                    modern architectures. Based in Dhaka, Bangladesh, I work
+                    with startups, businesses, and engineering teams to
+                    transform conceptual wireframes into high-performing,
+                    interactive web applications.
                   </p>
                   <p>
-                    My primary technical foundation is built on React, Next.js, TypeScript, Node.js, Express, and MongoDB. I have a strong dedication to writing clean, maintainable, modular code and implementing pixel-perfect user interfaces with Tailwind CSS and DaisyUI.
+                    My primary technical foundation is built on React, Next.js,
+                    TypeScript, Node.js, Express, and MongoDB. I have a strong
+                    dedication to writing clean, maintainable, modular code and
+                    implementing pixel-perfect user interfaces with Tailwind CSS
+                    and DaisyUI.
                   </p>
                   <p>
-                    Whether working on authentication, complex database models, real-time dashboards, or API integrations, my focus remains constant: delivering user-centric performance, reliability, and visual excellence.
+                    Whether working on authentication, complex database models,
+                    real-time dashboards, or API integrations, my focus remains
+                    constant: delivering user-centric performance, reliability,
+                    and visual excellence.
                   </p>
                 </div>
               </div>
@@ -147,13 +194,17 @@ export default function AboutPage() {
                   className="theme-btn-outline rounded-[15px] px-6 py-3 text-sm font-semibold inline-flex items-center gap-2"
                 >
                   Download Resume
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                  >
                     <path d="M3 19H21V21H3V19ZM13 13.1716L19.0711 7.1005L20.4853 8.51472L12 17L3.51472 8.51472L4.92893 7.1005L11 13.1716V2H13V13.1716Z" />
                   </svg>
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </section>

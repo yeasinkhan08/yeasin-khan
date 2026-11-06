@@ -3,10 +3,12 @@ import Marquee from "./Marquee";
 
 export default function Hero() {
   return (
-    <section id="home" className="pt-28 pb-8 md:pt-36 md:pb-12 bg-black text-white">
+    <section
+      id="home"
+      className="pt-28 pb-8 md:pt-36 md:pb-12 bg-black text-white"
+    >
       <div className="mx-auto max-w-[1296px] px-4">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 items-stretch">
-          
           {/* LEFT COLUMN: Profile Card */}
           <div className="lg:col-span-4 flex flex-col justify-between bento-card text-center p-7 sm:p-9">
             <div>
@@ -21,8 +23,21 @@ export default function Hero() {
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
-                    <circle cx="110" cy="90" r="75" fill="#FDBA74" fillOpacity="0.25" />
-                    <circle cx="110" cy="110" r="82" stroke="#FFFFFF" strokeOpacity="0.4" strokeWidth="1.5" />
+                    <circle
+                      cx="110"
+                      cy="90"
+                      r="75"
+                      fill="#FDBA74"
+                      fillOpacity="0.25"
+                    />
+                    <circle
+                      cx="110"
+                      cy="110"
+                      r="82"
+                      stroke="#FFFFFF"
+                      strokeOpacity="0.4"
+                      strokeWidth="1.5"
+                    />
                     <path
                       d="M28 110 A82 82 0 0 0 192 110"
                       stroke="#FFFFFF"
@@ -69,7 +84,11 @@ export default function Hero() {
                 aria-label="Facebook"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-all duration-300 hover:-translate-y-1 hover:border-[#f15b3a] hover:bg-[#f15b3a] hover:text-white hover:shadow-lg hover:shadow-[#f15b3a]/30"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
                   <path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.4v2.2H7v3.2h2.8V21h3.6Z" />
                 </svg>
               </a>
@@ -81,7 +100,11 @@ export default function Hero() {
                 aria-label="X (Twitter)"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-all duration-300 hover:-translate-y-1 hover:border-[#f15b3a] hover:bg-[#f15b3a] hover:text-white hover:shadow-lg hover:shadow-[#f15b3a]/30"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-4 w-4"
+                >
                   <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 17.8h1.7L7.3 4.1H5.5l12.3 15.7Z" />
                 </svg>
               </a>
@@ -93,7 +116,11 @@ export default function Hero() {
                 aria-label="GitHub"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-all duration-300 hover:-translate-y-1 hover:border-[#f15b3a] hover:bg-[#f15b3a] hover:text-white hover:shadow-lg hover:shadow-[#f15b3a]/30"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
@@ -103,13 +130,17 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/khan-yeasin/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-all duration-300 hover:-translate-y-1 hover:border-[#f15b3a] hover:bg-[#f15b3a] hover:text-white hover:shadow-lg hover:shadow-[#f15b3a]/30"
               >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
                   <path d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z" />
                 </svg>
               </a>
@@ -118,16 +149,21 @@ export default function Hero() {
 
           {/* RIGHT COLUMN: Bento Stack */}
           <div className="lg:col-span-8 flex flex-col justify-between gap-6">
-            
             {/* TOP CARD: Introduction */}
-            <div id="about" className="bento-card flex flex-col justify-between p-7 sm:p-9 md:p-10 flex-1">
+            <div
+              id="about"
+              className="bento-card flex flex-col justify-between p-7 sm:p-9 md:p-10 flex-1"
+            >
               <div>
                 <p className="text-[14px] font-medium tracking-wide text-[#9f9f9f]">
                   Hello There!
                 </p>
 
                 <h1 className="mt-3 text-[26px] sm:text-[32px] md:text-[38px] font-normal leading-[1.3] tracking-tight text-white">
-                  I’m <span className="font-semibold text-white">Yeasin Khan</span>, a Full Stack Developer crafting user-centric web applications with pixel-perfect precision.
+                  I’m{" "}
+                  <span className="font-semibold text-white">Yeasin Khan</span>,
+                  a Full Stack Developer crafting user-centric web applications
+                  with pixel-perfect precision.
                 </h1>
 
                 {/* Status Indicator */}
@@ -142,11 +178,7 @@ export default function Hero() {
 
               {/* Download CV Button */}
               <div className="mt-8">
-                <a
-                  href="/resume.pdf"
-                  download
-                  className="theme-btn group"
-                >
+                <a href="/resume.pdf" download className="theme-btn group">
                   Download CV
                   <svg
                     viewBox="0 0 24 24"
@@ -173,9 +205,7 @@ export default function Hero() {
                 <Marquee />
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>
