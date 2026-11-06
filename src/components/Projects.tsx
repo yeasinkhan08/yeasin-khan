@@ -17,6 +17,24 @@ export interface Project {
 const allProjects: Project[] = [
   {
     id: 1,
+    title: "Ekota -Event Management Platform",
+    category: "Full Stack",
+    description:
+      "The goal of Ekota is simple: make it easier for people to discover community events, participate in them, and make a positive difference together.",
+    tags: [
+      "NEXT JS",
+      "JavaScript",
+      "Tailwind CSS",
+      "Node JS",
+      "Mongo DB",
+      "Vercel",
+    ],
+    githubUrl: "https://github.com/yeasinkhan08/ekota-client",
+    liveUrl: "https://ekota-client.vercel.app/",
+    image: "/Ekota.png",
+  },
+  {
+    id: 2,
     title: "Bazar Dor - Online Price Tracker",
     category: "Full Stack",
     description:
@@ -27,7 +45,7 @@ const allProjects: Project[] = [
     image: "/Bazar-dor.png",
   },
   {
-    id: 2,
+    id: 3,
     title: "FitLog - Workout & Fitness Tracker",
     category: "Full Stack",
     description:
@@ -38,7 +56,7 @@ const allProjects: Project[] = [
     image: "/Fitlog.png",
   },
   {
-    id: 3,
+    id: 4,
     title: "News24 - Real-Time Media Portal",
     category: "Frontend",
     description:
@@ -47,16 +65,7 @@ const allProjects: Project[] = [
     githubUrl: "https://github.com/yeasinkhan08/news-24",
     image: "/images/projects/news-24.jpg",
   },
-  {
-    id: 4,
-    title: "BookVibe - Book Discovery & Review",
-    category: "Full Stack",
-    description:
-      "Web application for discovering books, writing user reviews, tracking personal reading lists, and organizing custom wishlist collections.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/yeasinkhan08/book-vibe",
-    image: "/images/projects/book-vibe.jpg",
-  },
+
   {
     id: 5,
     title: "Dev Landing Page - Tech Conference",
@@ -68,26 +77,9 @@ const allProjects: Project[] = [
     liveUrl: "https://yeasinkhan08.github.io/Dev-landing-page/",
     image: "/images/projects/dev-landing.jpg",
   },
+
   {
     id: 6,
-    title: "BPL Player - Cricket Team Auction",
-    category: "Frontend",
-    description:
-      "Dynamic Bangladesh Premier League player bidding platform with real-time budget calculation, team roster limits, and player statistics.",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/yeasinkhan08/Bpl-player",
-  },
-  {
-    id: 7,
-    title: "BetterAuth - Modern Authentication Engine",
-    category: "Backend",
-    description:
-      "Security-first authentication middleware and session handler with token encryption, password hashing, and OAuth support.",
-    tags: ["Node.js", "JavaScript", "JWT", "Security"],
-    githubUrl: "https://github.com/yeasinkhan08/better-auth",
-  },
-  {
-    id: 8,
     title: "User Management Portal & Admin Client",
     category: "Backend",
     description:
@@ -124,7 +116,9 @@ export default function Projects({ showTitle = true }: ProjectsProps) {
               Works &amp; Projects
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-[15px] sm:text-[16px] leading-relaxed text-[#9f9f9f]">
-              Explore my open-source projects and web applications on GitHub, crafted with love and dedication using modern frontend and backend technologies.
+              Explore my open-source projects and web applications on GitHub,
+              crafted with love and dedication using modern frontend and backend
+              technologies.
             </p>
           </div>
         )}
@@ -136,10 +130,11 @@ export default function Projects({ showTitle = true }: ProjectsProps) {
               key={cat}
               type="button"
               onClick={() => setActiveFilter(cat)}
-              className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 ${activeFilter === cat
-                ? "bg-[#f15b3a] text-white shadow-lg shadow-[#f15b3a]/30"
-                : "border border-white/10 bg-[#121214] text-[#cecece] hover:border-white/20 hover:text-white"
-                }`}
+              className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
+                activeFilter === cat
+                  ? "bg-[#f15b3a] text-white shadow-lg shadow-[#f15b3a]/30"
+                  : "border border-white/10 bg-[#121214] text-[#cecece] hover:border-white/20 hover:text-white"
+              }`}
             >
               {cat}
             </button>
@@ -180,7 +175,12 @@ export default function Projects({ showTitle = true }: ProjectsProps) {
                     aria-label={`View ${project.title} on GitHub`}
                     className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#cecece] transition-colors group-hover:border-[#f15b3a] group-hover:text-[#f15b3a]"
                   >
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                    >
                       <path
                         fillRule="evenodd"
                         clipRule="evenodd"
@@ -192,7 +192,11 @@ export default function Projects({ showTitle = true }: ProjectsProps) {
 
                 {/* Title */}
                 <h3 className="text-[20px] font-bold text-white transition-colors duration-200 group-hover:text-[#f15b3a]">
-                  <a href={project.liveUrl || project.githubUrl} target="_blank" rel="noreferrer">
+                  <a
+                    href={project.liveUrl || project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {project.title}
                   </a>
                 </h3>
@@ -223,7 +227,12 @@ export default function Projects({ showTitle = true }: ProjectsProps) {
                   rel="noreferrer"
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#161618] px-3.5 py-2.5 text-xs font-semibold text-white transition-all hover:border-[#f15b3a] hover:bg-[#f15b3a]"
                 >
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="currentColor"
+                  >
                     <path
                       fillRule="evenodd"
                       clipRule="evenodd"

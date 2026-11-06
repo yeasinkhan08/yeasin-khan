@@ -18,9 +18,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p>
-            Crafted with <span className="text-[#f15b3a]">❤️</span> by Yeasin Khan
-          </p>
+          <p>Yeasin Khan</p>
         </div>
       </div>
     </footer>
