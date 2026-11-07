@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Home", href: "/#home" },
@@ -13,120 +14,147 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   return (
-    <header className="fixed inset-x-0 top-8 z-50 px-4">
-      <nav
-        className="relative mx-auto flex h-[50px] max-w-[1296px] items-center justify-between"
-        aria-label="Main navigation"
-      >
-        {/* Logo */}
-        <Link
-          href="#home"
-          className="shrink-0 text-[28px] font-extrabold leading-none tracking-[-1px] text-black transition-colors duration-200 dark:text-white hover:border-[#F15B3A] hover:text-[#F15B3A] trasnsition-colors  dark:border-[#242424] md:inline-flex"
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "top-0 py-3"
+          : "top-6 py-0"
+      }`}
+    >
+      <div className="mx-auto max-w-[1296px] px-4">
+        <nav
+          className={`flex items-center justify-between rounded-2xl px-5 transition-all duration-500 ${
+            scrolled
+              ? "h-[58px] border border-white/[0.08] bg-black/80 shadow-2xl shadow-black/40 backdrop-blur-xl"
+              : "h-[52px] border border-white/[0.06] bg-black/60 backdrop-blur-md"
+          }`}
+          aria-label="Main navigation"
         >
-          Yeasin Khan
-        </Link>
-
-        {/* Desktop Navigation */}
-        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 md:flex lg:gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="whitespace-nowrap text-[16px] font-medium text-black transition-colors duration-200 hover:text-[#F15B3A] dark:text-white"
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Hire Me Button */}
-        <Link
-          href="/#contact"
-          className="hidden h-[46px] items-center justify-center gap-1.5 rounded-[16px] border border-gray-200 px-6 text-[14px] font-semibold text-black transition-all duration-200 hover:border-[#F15B3A] hover:bg-[#F15B3A] hover:text-white dark:border-[#242424] dark:text-white md:inline-flex"
-        >
-          Hire Me
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
+          {/* Logo */}
+          <Link
+            href="/#home"
+            className="shrink-0 text-[22px] font-extrabold leading-none tracking-[-0.5px] text-white transition-colors duration-200 hover:text-[#F15B3A]"
           >
-            <path d="M12 8V5a2 2 0 0 0-4 0v7" />
-            <path d="M8 10V4a2 2 0 0 0-4 0v9l3 6a4 4 0 0 0 3 2h5a4 4 0 0 0 4-4v-5a2 2 0 0 0-4 0" />
-            <path d="M12 11V7a2 2 0 0 1 4 0v5" />
-          </svg>
-        </Link>
+            Yeasin<span className="text-[#F15B3A]">.</span>
+          </Link>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={
-            menuOpen ? "Close navigation menu" : "Open navigation menu"
-          }
-          aria-expanded={menuOpen}
-          className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 text-black dark:border-[#242424] dark:text-white md:hidden"
-        >
-          {menuOpen ? (
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
+          {/* Desktop Navigation */}
+          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="relative whitespace-nowrap rounded-lg px-4 py-2 text-[14px] font-medium text-[#cecece] transition-all duration-200 hover:bg-white/[0.06] hover:text-white group"
+              >
+                {link.name}
+                <span className="absolute bottom-1 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-[#F15B3A] transition-all duration-300 group-hover:w-4" />
+              </Link>
+            ))}
+          </div>
+
+          {/* Right side: Hire Me + Menu */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/#contact"
+              className="hidden h-[38px] items-center justify-center gap-2 rounded-xl bg-[#F15B3A] px-5 text-[13px] font-semibold text-white transition-all duration-200 hover:bg-[#dc4829] hover:shadow-lg hover:shadow-[#F15B3A]/30 hover:-translate-y-px md:inline-flex"
             >
-              <path d="m18 6-12 12M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
+              Hire Me
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={menuOpen}
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white transition-colors hover:border-white/20 hover:bg-white/[0.06] md:hidden"
             >
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-          )}
-        </button>
+              <span
+                className="relative flex h-4 w-5 flex-col items-center justify-center gap-[5px] transition-all"
+              >
+                <span
+                  className={`block h-[1.5px] w-full rounded-full bg-current transition-all duration-300 ${
+                    menuOpen ? "translate-y-[6.5px] rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-[1.5px] rounded-full bg-current transition-all duration-300 ${
+                    menuOpen ? "w-0 opacity-0" : "w-full opacity-100"
+                  }`}
+                />
+                <span
+                  className={`block h-[1.5px] w-full rounded-full bg-current transition-all duration-300 ${
+                    menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""
+                  }`}
+                />
+              </span>
+            </button>
+          </div>
+        </nav>
 
         {/* Mobile Dropdown */}
-        {menuOpen && (
-          <div className="absolute left-0 right-0 top-[60px] rounded-2xl border border-gray-200 bg-white p-4 shadow-2xl dark:border-[#242424] dark:bg-[#111111] md:hidden">
-            <div className="flex flex-col gap-1">
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
+            menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="mt-2 rounded-2xl border border-white/[0.08] bg-black/90 p-3 shadow-2xl shadow-black/60 backdrop-blur-xl">
+            <div className="flex flex-col gap-0.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-4 py-3 text-[15px] font-medium text-black transition-colors hover:bg-gray-100 hover:text-[#F15B3A] dark:text-white dark:hover:bg-[#202020]"
+                  className="flex items-center rounded-xl px-4 py-3 text-[15px] font-medium text-[#cecece] transition-colors hover:bg-white/[0.06] hover:text-white"
                 >
                   {link.name}
                 </Link>
               ))}
 
+              <div className="my-1 h-px bg-white/[0.06]" />
+
               <Link
                 href="/#contact"
                 onClick={() => setMenuOpen(false)}
-                className="mt-2 rounded-xl bg-[#F15B3A] px-4 py-3 text-center text-sm font-semibold text-white"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#F15B3A] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#dc4829]"
               >
-                Hire Me →
+                Hire Me
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </Link>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      </div>
     </header>
   );
 }
