@@ -30,19 +30,17 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "top-0 py-3"
-          : "top-6 py-0"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled
+        ? "top-0 py-3"
+        : "top-6 py-0"
+        }`}
     >
       <div className="mx-auto max-w-[1296px] px-4">
         <nav
-          className={`flex items-center justify-between rounded-2xl px-5 transition-all duration-500 ${
-            scrolled
-              ? "h-[58px] border border-white/[0.08] bg-black/80 shadow-2xl shadow-black/40 backdrop-blur-xl"
-              : "h-[52px] border border-white/[0.06] bg-black/60 backdrop-blur-md"
-          }`}
+          className={`flex items-center justify-between rounded-2xl px-5 transition-all duration-500 ${scrolled
+            ? "h-[58px] border border-white/[0.08] bg-black/80 shadow-2xl shadow-black/40 backdrop-blur-xl"
+            : "h-[52px] border border-white/[0.06] bg-black/60 backdrop-blur-md"
+            }`}
           aria-label="Main navigation"
         >
           {/* Logo */}
@@ -50,7 +48,7 @@ export default function Navbar() {
             href="/#home"
             className="shrink-0 text-[22px] font-extrabold leading-none tracking-[-0.5px] text-white transition-colors duration-200 hover:text-[#F15B3A]"
           >
-            Yeasin<span className="text-[#F15B3A]">.</span>
+            Yeasin Khan<span className="text-[#F15B3A]">.</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -101,19 +99,16 @@ export default function Navbar() {
                 className="relative flex h-4 w-5 flex-col items-center justify-center gap-[5px] transition-all"
               >
                 <span
-                  className={`block h-[1.5px] w-full rounded-full bg-current transition-all duration-300 ${
-                    menuOpen ? "translate-y-[6.5px] rotate-45" : ""
-                  }`}
+                  className={`block h-[1.5px] w-full rounded-full bg-current transition-all duration-300 ${menuOpen ? "translate-y-[6.5px] rotate-45" : ""
+                    }`}
                 />
                 <span
-                  className={`block h-[1.5px] rounded-full bg-current transition-all duration-300 ${
-                    menuOpen ? "w-0 opacity-0" : "w-full opacity-100"
-                  }`}
+                  className={`block h-[1.5px] rounded-full bg-current transition-all duration-300 ${menuOpen ? "w-0 opacity-0" : "w-full opacity-100"
+                    }`}
                 />
                 <span
-                  className={`block h-[1.5px] w-full rounded-full bg-current transition-all duration-300 ${
-                    menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""
-                  }`}
+                  className={`block h-[1.5px] w-full rounded-full bg-current transition-all duration-300 ${menuOpen ? "-translate-y-[6.5px] -rotate-45" : ""
+                    }`}
                 />
               </span>
             </button>
@@ -122,9 +117,8 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-            menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <div className="mt-2 rounded-2xl border border-white/[0.08] bg-black/90 p-3 shadow-2xl shadow-black/60 backdrop-blur-xl">
             <div className="flex flex-col gap-0.5">

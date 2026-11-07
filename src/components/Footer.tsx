@@ -59,7 +59,7 @@ export default function Footer() {
               href="/#home"
               className="text-[22px] font-extrabold tracking-[-0.5px] text-white transition-colors hover:text-[#f15b3a]"
             >
-              Yeasin<span className="text-[#f15b3a]">.</span>
+              Yeasin Khan
             </Link>
             <p className="text-[14px] leading-relaxed text-[#9f9f9f]">
               Full Stack Developer crafting modern, high-performance web
@@ -132,9 +132,7 @@ export default function Footer() {
             </Link>
             . All Rights Reserved.
           </p>
-          <p className="text-[13px] text-[#9f9f9f]">
-            Built with <span className="text-[#f15b3a]">♥</span> using Next.js & Tailwind CSS
-          </p>
+          <p>Mern Stack Developer</p>
         </div>
       </div>
     </footer>
